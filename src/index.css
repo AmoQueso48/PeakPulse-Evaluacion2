@@ -1,0 +1,17 @@
+/* Estilos globales mínimos: el resto del diseño lo aporta Bootstrap. */
+
+body {
+  margin: 0;
+}
+
+/* El contenedor raíz ocupa toda la altura para que el footer quede abajo */
+#root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ancho de contenido usado en las páginas internas y el footer */
+.container.container-viaje {
+  max-width: 900px;
+}
