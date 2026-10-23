@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="bg-body-tertiary border-top mt-5 py-4">
-      <div className="container container-viaje">
+    <footer className="pp-footer mt-5 py-4">
+      <div className="container">
         <div className="row g-4 small">
           <div className="col-md-4">
             <h2 className="h6 fw-semibold">Viaje Seguro</h2>

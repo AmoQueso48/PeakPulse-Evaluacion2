@@ -51,13 +51,14 @@ export default function Login() {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="pp-login">
+      <div className="container py-5">
       <div className="row g-4 justify-content-center">
         
         {/* ==================== COLUMNA IZQUIERDA: INICIO DE SESIÓN ==================== */}
         <div className="col-md-5">
           <div className="card p-4 shadow-sm h-100">
-            <h3 className="text-center mb-4">Inicio de sesión</h3>
+            <h3 className="text-center mb-4 fw-bold">Inicio de sesión</h3>
             <form onSubmit={handleLoginSubmit}>
               
               <div className="mb-3">
@@ -106,7 +107,7 @@ export default function Login() {
         {/* ==================== COLUMNA DERECHA: REGISTRO DE USUARIO ==================== */}
         <div className="col-md-5">
           <div className="card p-4 shadow-sm h-100">
-            <h3 className="text-center mb-4">Registro de usuario</h3>
+            <h3 className="text-center mb-4 fw-bold">Registro de usuario</h3>
             <form onSubmit={handleRegistroSubmit}>
               
               <div className="mb-3">
@@ -152,12 +153,9 @@ export default function Login() {
                   required
                 />
               </div>
-
-              {/* Botón con el color turquesa/esmeralda de tu diseño original */}
               <button
                 type="submit"
-                className="btn text-white w-100 mt-2"
-                style={{ backgroundColor: '#1de9b6', borderColor: '#1de9b6', fontWeight: '500' }}
+                className="btn btn-dark w-100 mt-2"
               >
                 Registrarse
               </button>
@@ -166,6 +164,7 @@ export default function Login() {
         </div>
 
       </div>
+    </div>
     </div>
   );
 }

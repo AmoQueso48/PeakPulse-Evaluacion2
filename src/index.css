@@ -1,17 +1,108 @@
-/* Estilos globales mínimos: el resto del diseño lo aporta Bootstrap. */
-
-body {
-  margin: 0;
+/* Tema Viaje Seguro / PeakPulse: cordillera, ruta y bus escolar.
+   Una sola familia tipográfica (Overpass, de estilo señalética vial) y un acento: Azul bus. */
+:root {
+  --pp-ink: #14262F;
+  --pp-ridge: #2C5870;
+  --pp-bus: #4a9dce;
+  --pp-sky: #2A6A8E;   /* azul de la barra y los banners */
+  --pp-deep: #1A4561;  /* azul profundo de la cordillera */
+  --pp-line: rgba(20, 38, 47, 0.14);
+  --pp-ridge-near: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 64' preserveAspectRatio='none'%3E%3Cpath fill='%23EEF2F4' d='M0 64V52L150 38 300 54 480 30 640 52 800 36 960 54 1100 42 1200 52V64Z'/%3E%3C/svg%3E");
+  --pp-ridge-far: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 64' preserveAspectRatio='none'%3E%3Cpath fill='%231A4561' d='M0 64V40L120 22 230 42 360 10 470 38 600 18 720 44 860 8 980 36 1100 20 1200 38V64Z'/%3E%3C/svg%3E");
+  --bs-body-font-family: 'Overpass', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --bs-body-bg: #EEF2F4;
+  --bs-body-color: #14262F;
+  --bs-light-rgb: 238, 242, 244;
+  --bs-link-color-rgb: 44, 88, 112;
+  --bs-link-hover-color-rgb: 20, 38, 47;
 }
+
+body { margin: 0; }
+h1, h2, h3 { letter-spacing: -0.015em; }
 
 /* El contenedor raíz ocupa toda la altura para que el footer quede abajo */
-#root {
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-}
+#root { min-height: 100svh; display: flex; flex-direction: column; }
 
-/* Ancho de contenido usado en las páginas internas y el footer */
-.container.container-viaje {
-  max-width: 900px;
+/* ---------- Barra superior y footer ---------- */
+.pp-nav {
+  background: var(--pp-ink); border-bottom: 3px solid var(--pp-bus);
+  --bs-navbar-padding-y: 0.8rem;
 }
+/* Doble clase para ganarle a las variables del tema oscuro de Bootstrap */
+.navbar.pp-nav {
+  --bs-navbar-brand-color: #fff; --bs-navbar-brand-hover-color: #fff;
+  --bs-navbar-color: #fff; --bs-navbar-hover-color: var(--pp-bus);
+  --bs-navbar-active-color: var(--pp-bus);
+}
+.pp-nav .nav-link { font-weight: 700; font-size: 1.05rem; }
+.pp-nav .navbar-nav .nav-link.active { text-decoration: underline; text-underline-offset: 0.4rem; text-decoration-thickness: 2px; }
+.pp-nav .form-control { background: #fff; color: var(--pp-ink); border-color: transparent; }
+.pp-nav .form-control::placeholder { color: #4A5A64; opacity: 1; }
+.pp-nav .btn-outline-danger {
+  --bs-btn-color: #fff; --bs-btn-border-color: rgba(255, 255, 255, 0.75);
+  --bs-btn-hover-color: var(--pp-ink); --bs-btn-hover-bg: #fff; --bs-btn-hover-border-color: #fff;
+  --bs-btn-active-color: var(--pp-ink); --bs-btn-active-bg: #fff; --bs-btn-active-border-color: #fff;
+}
+.pp-nav .btn-outline-success {
+  --bs-btn-color: var(--pp-bus); --bs-btn-border-color: var(--pp-bus);
+  --bs-btn-hover-color: var(--pp-ink); --bs-btn-hover-bg: var(--pp-bus); --bs-btn-hover-border-color: var(--pp-bus);
+  --bs-btn-active-color: var(--pp-ink); --bs-btn-active-bg: var(--pp-bus); --bs-btn-active-border-color: var(--pp-bus);
+}
+.pp-nav .dropdown-menu {
+  --bs-dropdown-bg: var(--pp-deep); --bs-dropdown-border-color: rgba(255, 255, 255, 0.15);
+  --bs-dropdown-link-hover-bg: rgba(255, 255, 255, 0.12);
+}
+.pp-nav .navbar-brand { display: inline-flex; align-items: center; font-weight: 800; font-size: 1.4rem; letter-spacing: -0.01em; }
+.pp-logo { height: 2.4rem; width: auto; margin-right: 0.65rem; }
+.pp-nav .navbar-nav .nav-link.active { color: var(--pp-bus); }
+
+.pp-footer { background: var(--pp-ink); color: rgba(255, 255, 255, 0.8); border-top: 3px solid var(--pp-bus); }
+.pp-footer h2 { color: #fff; }
+.pp-footer a { color: var(--pp-bus); }
+.pp-footer .text-muted { color: rgba(255, 255, 255, 0.6) !important; }
+
+/* ---------- Banner con la silueta de la cordillera (elemento firma) ---------- */
+.pp-hero {
+  color: #fff;
+  padding: 3rem 0 6rem;
+  background-color: var(--pp-sky);
+  background-image: var(--pp-ridge-near), var(--pp-ridge-far);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% 64px;
+}
+.pp-hero h1 { max-width: 40rem; }
+.pp-hero p { max-width: 44rem; color: rgba(255, 255, 255, 0.92); }
+.pp-hero p.opacity-75 { opacity: 1 !important; }
+
+/* ---------- Tarjetas planas, sin sombras ---------- */
+.card { border-color: var(--pp-line); border-radius: 0.5rem; }
+.card.border-0 { border: 1px solid var(--pp-line) !important; }
+.shadow-sm { box-shadow: none !important; }
+.card.pp-card-accent { border-top: 4px solid var(--pp-bus) !important; }
+.pp-stat { color: var(--pp-ridge); letter-spacing: -0.03em; }
+.table.pp-ticket th, .table.pp-ticket td { border-bottom: 1px dashed var(--pp-line); }
+
+/* ---------- Botones y formularios ---------- */
+.btn { font-weight: 700; }
+.btn-primary {
+  --bs-btn-color: var(--pp-ink); --bs-btn-bg: var(--pp-bus); --bs-btn-border-color: var(--pp-bus);
+  --bs-btn-hover-color: var(--pp-ink); --bs-btn-hover-bg: #6AB4E0; --bs-btn-hover-border-color: #6AB4E0;
+  --bs-btn-active-color: var(--pp-ink); --bs-btn-active-bg: #3685B5; --bs-btn-active-border-color: #3685B5;
+  --bs-btn-focus-shadow-rgb: 74, 157, 206;
+}
+.btn-dark { --bs-btn-bg: var(--pp-ink); --bs-btn-border-color: var(--pp-ink); --bs-btn-hover-bg: var(--pp-ridge); --bs-btn-hover-border-color: var(--pp-ridge); }
+.form-control:focus, .form-select:focus { border-color: var(--pp-ridge); box-shadow: 0 0 0 0.25rem rgba(44, 88, 112, 0.2); }
+
+/* ---------- Login---------- */
+.pp-login {
+  flex: 1; display: flex; align-items: center;
+  background-color: var(--pp-ink);
+  background-image:
+    linear-gradient(rgba(20, 38, 47, 0.55), rgba(42, 106, 142, 0.75)),
+    url('./assets/login.jpg');
+  background-repeat: no-repeat;
+  background-position: center, top;
+  background-size: cover, 100% auto;
+}
+.pp-login .container { width: 100%; }

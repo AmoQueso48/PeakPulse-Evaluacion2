@@ -5,9 +5,10 @@ export default function Header() {
   const navigate = useNavigate();
 
   return (
-    <Navbar expand="lg" className="bg-body-tertiary border-bottom">
+    <Navbar expand="lg" data-bs-theme="dark" className="pp-nav">
       <Container fluid>
         <Navbar.Brand as={Link} to="/">
+          <img src="/icono.png" alt="" className="pp-logo" />
           Viaje Seguro
         </Navbar.Brand>
 

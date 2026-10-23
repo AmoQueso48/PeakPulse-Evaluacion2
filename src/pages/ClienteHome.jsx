@@ -47,10 +47,7 @@ export default function ClienteHome() {
 
       {/* Banner Superior con degradado */}
       <div 
-        className="text-white text-center py-5 mb-5 shadow-sm"
-        style={{
-          background: 'linear-gradient(135deg, #1de9b6 0%, #0d6efd 100%)'
-        }}
+        className="pp-hero mb-5"
       >
         <div className="container">
           <h1 className="fw-bold mb-2">¿Dónde decidirás viajar el día de hoy?</h1>
@@ -78,8 +75,8 @@ export default function ClienteHome() {
 
           {/* Columna Derecha: Tarjeta con Formulario */}
           <div className="col-lg-6">
-            <div className="card p-4 shadow-sm border-0">
-              <h3 className="text-center mb-4 fw-semibold text-secondary">Solicitar un viaje</h3>
+            <div className="card p-4 shadow-sm pp-card-accent">
+              <h3 className="mb-4 fw-bold">Solicitar un viaje</h3>
               
               <form onSubmit={handleSolicitarViaje}>
                 <div className="row mb-3">

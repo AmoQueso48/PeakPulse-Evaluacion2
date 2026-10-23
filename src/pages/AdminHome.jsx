@@ -36,10 +36,7 @@ export default function AdminHome() {
 
       {/* Banner Principal: Panel de Administración */}
       <div
-        className="text-white text-center py-5 mb-4 shadow-sm"
-        style={{
-          background: 'linear-gradient(135deg, #1de9b6 0%, #00b4d8 100%)'
-        }}
+        className="pp-hero mb-4"
       >
         <div className="container">
           <h1 className="fw-bold mb-2">Panel de administración</h1>
@@ -51,28 +48,28 @@ export default function AdminHome() {
 
       <div className="container flex-grow-1">
         {/* ================= TARJETAS DE ESTADÍSTICAS ================= */}
-        <div className="row g-3 mb-5 text-center">
+        <div className="row g-3 mb-5">
           <div className="col-md-3">
             <div className="card border-0 shadow-sm p-3">
-              <h2 className="display-5 fw-normal text-dark mb-1">72%</h2>
+              <h2 className="display-5 fw-bold pp-stat mb-1">72%</h2>
               <span className="text-muted small">Utilización actual de la flota</span>
             </div>
           </div>
           <div className="col-md-3">
             <div className="card border-0 shadow-sm p-3">
-              <h2 className="display-5 fw-normal text-dark mb-1">18%</h2>
+              <h2 className="display-5 fw-bold pp-stat mb-1">18%</h2>
               <span className="text-muted small">Viajes con retraso</span>
             </div>
           </div>
           <div className="col-md-3">
             <div className="card border-0 shadow-sm p-3">
-              <h2 className="display-5 fw-normal text-dark mb-1">+15%</h2>
+              <h2 className="display-5 fw-bold pp-stat mb-1">+15%</h2>
               <span className="text-muted small">Aumento en costo de combustible</span>
             </div>
           </div>
           <div className="col-md-3">
             <div className="card border-0 shadow-sm p-3">
-              <h2 className="display-5 fw-normal text-dark mb-1">22%</h2>
+              <h2 className="display-5 fw-bold pp-stat mb-1">22%</h2>
               <span className="text-muted small">Vehículos fuera de servicio</span>
             </div>
           </div>
@@ -82,8 +79,8 @@ export default function AdminHome() {
         <div className="row g-4 align-items-center mb-5">
           {/* Columna Izquierda: Formulario de Asignación */}
           <div className="col-lg-6">
-            <div className="card p-4 shadow-sm border-0 border-top border-4 border-info">
-              <h3 className="text-center mb-4 fw-semibold text-secondary">
+            <div className="card p-4 shadow-sm pp-card-accent">
+              <h3 className="mb-4 fw-bold">
                 Asignar vehículo y conductor
               </h3>
 

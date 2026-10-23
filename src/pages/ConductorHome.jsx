@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Boton from '../components/Boton';
+import imagenViaje from '../assets/viaje.jpg';
 
 // Datos de ejemplo
 const ordenDeViaje = [
@@ -47,20 +48,25 @@ export default function ConductorHome() {
     <div className="d-flex flex-column min-vh-100 bg-light">
       <Header />
 
-      <main className="flex-grow-1">
-        <div className="container py-4">
-          {/* ==================== TÍTULO ==================== */}
-          <h1 className="h2 fw-semibold">Tu próximo viaje</h1>
-          <p className="text-muted">
+      {/* ==================== TÍTULO ==================== */}
+      <div className="pp-hero mb-4">
+        <div className="container">
+          <h1 className="fw-bold mb-2">Tu próximo viaje</h1>
+          <p className="lead m-0">
             Revisa el detalle de tu próxima orden de viaje y repórtanos cualquier novedad durante el trayecto
           </p>
+        </div>
+      </div>
+
+      <main className="flex-grow-1">
+        <div className="container pb-4">
 
           {/* ==================== ORDEN DE VIAJE + IMAGEN ==================== */}
           <div className="row g-4 align-items-center mt-1">
             <div className="col-md-6">
-              <div className="card p-4 shadow-sm border-0">
-                <h2 className="h4 fw-semibold mb-3">Orden de viaje asignada</h2>
-                <table className="table table-sm mb-0">
+              <div className="card p-4 shadow-sm pp-card-accent">
+                <h2 className="h4 fw-bold mb-3">Orden de viaje asignada</h2>
+                <table className="table table-sm mb-0 pp-ticket">
                   <tbody>
                     {ordenDeViaje.map((fila) => (
                       <tr key={fila.etiqueta}>
@@ -77,8 +83,8 @@ export default function ConductorHome() {
             <div className="col-md-6">
               <div className="card shadow-sm border-0 overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80" 
-                  alt="Ruta a Farellones" 
+                  src={imagenViaje} 
+                  alt="Vista de la cordillera desde la ventana del bus" 
                   className="card-img-top object-fit-cover"
                   style={{ height: '320px' }}
                 />
